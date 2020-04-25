@@ -1,25 +1,14 @@
-const path = require('path');
-
-const isDevelopment =
-  process.env.NODE_ENV === "development" ||
-  process.env.NODE_ENV === undefined ||
-  false;
-const applicationPath = isDevelopment ? "/" : "/src";
-const PATH = {
-  SRC: path.join(__dirname, "/src"),
-  DIST: path.join(__dirname, "/dist"),
-  FONTS: path.join(__dirname, "/dist/fonts"),
-  ASSETS: path.join(__dirname, "/assets"),
-};
-
+const path = require("path");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = {
-  entry: path.join(PATH.SRC, "index.ts"),
+  entry: {
+    app: "./src/index.ts",
+  },
   output: {
-    filename: 'bundle.js',
-    path: PATH.DIST,
-    publicPath: applicationPath,
-    library: "webpackStarter",
+    filename: "[name].js",
+    path: path.resolve(__dirname, "./dist"),
+    publicPath: "/dist",
   },
   resolve: {
     extensions: [".ts", ".tsx", ".js", ".jsx"],
@@ -31,7 +20,56 @@ module.exports = {
         use: "ts-loader",
         exclude: /node_modules/,
       },
+      {
+        test: /\.scss$/,
+        use: [
+          "style-loader",
+          MiniCssExtractPlugin.loader,
+          {
+            loader: "css-loader",
+            options: { sourceMap: true }
+          },
+          {
+            loader: "postcss-loader",
+            options: {
+              sourceMap: true,
+              config: { path: `./postcss.config.js` }
+            }
+          },
+          {
+            loader: "sass-loader",
+            options: { sourceMap: true }
+          }
+        ]
+      },
+      {
+        test: /\.css$/,
+        use: [
+          "style-loader",
+          MiniCssExtractPlugin.loader,
+          {
+            loader: "css-loader",
+            options: { sourceMap: true }
+          },
+          {
+            loader: "postcss-loader",
+            options: {
+              sourceMap: true,
+              config: { path: `./postcss.config.js` }
+            }
+          }
+        ]
+      },
     ],
+  },
+  plugins: [
+    new MiniCssExtractPlugin({
+      filename: "[name].css",
+    }),
+  ],
+  devServer: {
+    overlay: true,
+    contentBase: './src/public'
   },
   devtool: "inline-source-map",
   watchOptions: {
@@ -39,4 +77,3 @@ module.exports = {
     ignored: ["node_modules/**"],
   },
 };
-
