@@ -1,29 +1,42 @@
 const path = require('path');
-const HTMLPlugin = require('html-webpack-plugin')
+
+const isDevelopment =
+  process.env.NODE_ENV === "development" ||
+  process.env.NODE_ENV === undefined ||
+  false;
+const applicationPath = isDevelopment ? "/" : "/src";
+const PATH = {
+  SRC: path.join(__dirname, "/src"),
+  DIST: path.join(__dirname, "/dist"),
+  FONTS: path.join(__dirname, "/dist/fonts"),
+  ASSETS: path.join(__dirname, "/assets"),
+};
+
 
 module.exports = {
-    entry: './src/index.js',
-    output: {
-        path: path.resolve(__dirname, 'dist'),
-        filename: 'bundle.js'
-    },
-    devServer: {
-        contentBase: path.join(__dirname, 'dist'),
-        compress: true,
-        port: 8080
-    },
-    plugins: [
-        new HTMLPlugin({
-            filename: 'index.html',
-            template: './public/index.html',
-            minify: false
-        })
+  entry: path.join(PATH.SRC, "index.ts"),
+  output: {
+    filename: 'bundle.js',
+    path: PATH.DIST,
+    publicPath: applicationPath,
+    library: "webpackStarter",
+  },
+  resolve: {
+    extensions: [".ts", ".tsx", ".js", ".jsx"],
+  },
+  module: {
+    rules: [
+      {
+        test: /\.tsx?$/,
+        use: "ts-loader",
+        exclude: /node_modules/,
+      },
     ],
-    module: {
-        rules: [{
-            test: /\.js$/,
-            loader: 'babel-loader',
-            exclude: '/node_modules/'
-        }]
-    }
+  },
+  devtool: "inline-source-map",
+  watchOptions: {
+    aggregateTimeout: 100,
+    ignored: ["node_modules/**"],
+  },
 };
+
