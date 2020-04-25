@@ -1,1 +1,4 @@
-const hello:string = 'Hello World!!!'; 
+import './style.scss';
+
+const h1: any = document.querySelector('h1');
+h1.textContent = 'Hello How are you?'; 
