@@ -1,0 +1,4 @@
+/dist
+**/tests-mocks/**
+jest.config.js
+commitlint.config.js
