@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="htmbook">
+        <div class="container mt-5">
+
+            <div class="row border border-primary p-5 mt-5">
+                <div class="col-4">
+                    <blockquote>My adress</blockquote> <!-- Для цитат-->
+                    <address>city Homel. Belogo street</address> <!-- Для указания адреса-->
+                    <p><cite>http://www.asimovonline.com</cite></p>
+                    <!-- Используется для указания источника цитирования.-->
+                    <col>
+                    <!-- Выбирает для форматирования один или несколько столбцов таблицы, не содержащих информацию одного типа. -->
+                </div>
+
+                <div class="col-4">
+                    <input list="list" placeholder="Начните вводить">
+                    <datalist id="list">
+                        <option value="Текст1">
+                        <option value="Текст2">
+                    </datalist>
+                </div>
+
+
+                <div class="col-4">
+                    <dl>
+                        <!-- Тег-контейнер, внутри которого находятся термин и его описание.-->
+                        <dt>Термин 1</dt>
+                        <dd>Определение термина 1</dd>
+                        <dt>Термин 2</dt>
+                        <dd>Определение термина 2</dd>
+                    </dl>
+                </div>
+
+            </div>
+
+            <div class="row border border-primary p-5 mt-5">
+
+                <div class="col-6">
+                    <!-- <embed src="images/mouse.swf" width="400" height="300" type="application/x-shockwave-flash"
+                pluginspage="http://www.macromedia.com/go/getflashplayer"> -->
+                    <!--используется для загрузки и отображения объектов (например, видеофайлов, флэш-роликов, некоторых звуковых файлов и т.д.)-->
+                </div>
+
+
+                <div class="col-4">
+
+                    <menu></menu>
+                    <!--предназначен для отображения списка пунктов меню. Аналогично тегам <ol> и <ul>-->
+                    <!--УСТАРЕЛ-->
+
+                    <!-- Простой попап диалог с формой -->
+                    <dialog id="favDialog">
+                        <p>Standart popup</p>
+                        <button id="cancel" type="reset">Cancel</button>
+                    </dialog>
+
+                    <button id="updateDetails">Show popup</button>
+
+                    <details class="mt-2">Lorem ipsum </details> <!-- Standart Accardion-->
+                    <details class="mt-2">Lorem ipsum </details> <!-- Standart Accardion-->
+                    <details class="mt-2">Lorem ipsum </details> <!-- Standart Accardion-->
+
+
+                    <figure class="border border-danger mt-3">
+                        <p><img src="//via.placeholder.com/200x100" alt="" /></p>
+                        <figcaption>Софийский собор</figcaption>
+                    </figure>
+                </div>
+
+            </div>
+
+            <div class="row border border-primary p-5 mt-5">
+                <div class="col-4">
+                    <p class="mt-5">
+                        Заметим, что схожий результат с Firefox показывает и браузер
+                        Opera, но, как видно на рис. 1, в последующих версиях
+                        <del>этот недостаток был устранен</del>
+                        <!-- Браузеры обычно помечают текст в контейнере <del> как перечеркнутый.-->
+                        <ins>подход разработчиков этого браузера был изменен</ins>.
+                        <!-- Браузеры обычно помечают текст в контейнере <ins> как подчеркнутый.-->
+                    </p>
+                </div>
+
+
+                <div class="col-4">
+                    <from class="mt-5">
+                        <fieldset>
+                            <!-- предназначен для группирования элементов формы-->
+                            <legend>Работа со временем</legend>
+                            <!-- применяется для создания заголовка группы элементов формы-->
+                            <p><input type="checkbox"> создание пунктуальности (никогда не
+                                будете никуда опаздывать);<Br>
+                                <input type="checkbox"> излечение от пунктуальности (никогда
+                                никуда не будете торопиться);<Br>
+                                <input type="checkbox"> изменение восприятия времени и часов.</p>
+                        </fieldset>
+                    </from>
+                </div>
+
+
+                <div class="col-4">
+                    <mark>Marked Text</mark> <!-- омечает текст как выделенный-->
+
+                    <div class="mt-5"></div>
+
+                    <p>Температура воды</p>
+                    <meter value="0" max="100" low="10" high="60">Низкая</meter>
+                    <!--Используется для вывода значения в некотором известном диапазоне-->
+                    <meter value="30" max="100" low="10" high="60">Нормальная</meter>
+                    <meter value="80" max="100" low="10" high="60">Горячая</meter>
+                    <meter value="100" max="100">Кипяток</meter>
+                </div>
+
+            </div>
+
+            <div class="row border border-primary p-5 mt-5">
+                <div class="col-4">
+                    <form action="handler.php">
+                        <p><select>
+                                <optgroup label="Цвет">
+                                    <option value="c1">Апельсиновый</option>
+                                    <option value="c2">Лимонный</option>
+                                    <option value="c3">Персиковый</option>
+                                </optgroup>
+                                <optgroup label="Тон">
+                                    <option value="s1">Светлый</option>
+                                    <option value="s2">Нормальный</option>
+                                    <option value="s3">Темный</option>
+                                </optgroup>
+                            </select></p>
+                        <p><input type="submit" value="Отправить"></p>
+                    </form>
+                </div>
+
+                <div class="col-4">
+                    <form oninput="result.value=(cm.value/2.54).toFixed(2)">
+                        <p>Введите длину в сантиметрах:
+                            <input type="number" name="cm" autofocus></p>
+                        <p>Длина в дюймах:
+                            <output name="result">0</output>
+                            <!--Определяет область в которую выводится информация, преимущественно с помощью скриптов.-->
+                        </p>
+                    </form>
+                </div>
+
+
+
+            </div>
+        </div>
+
+
+
+        <div class="mb-5"></div>
+
+
+        <script>
+            (function () {
+                var updateButton = document.getElementById('updateDetails');
+                var cancelButton = document.getElementById('cancel');
+                var favDialog = document.getElementById('favDialog');
+
+                // Update button opens a modal dialog
+                updateButton.addEventListener('click', function () {
+                    favDialog.showModal();
+                });
+
+                // Form cancel button closes the dialog box
+                cancelButton.addEventListener('click', function () {
+                    favDialog.close();
+                });
+
+            })();
+        </script>
+
+    </div>
+    </div>
+
+</body>
+
+</html>

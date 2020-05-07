@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="description" lang="en" content="Training Vanila JS">
+  <meta name="keywords" lang="en" content="JavaScript Vanila JS">
+
+  <meta name="robots" content="index, follow"> <!-- Индексация и переход по ссылкам разрешены -->
+  <!-- <meta http-equiv="refresh" content="10"> Страница будет сама перезагружаться -->
+
+  <meta name="application-name" content="sandbox Vanila JS ">
+  <meta name="autor" content="Aliaksandr Klimianok">
+
+  <title>Learn JavaScript</title>
+
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+  <!-- <link rel="stylesheet" href=""> -->
+  <!--Определяет отношения между документом и внешним ресурсом. Также используется для подключения внешних таблиц стилей.-->
+
+  <!-- Метаданные - это набор данных, который описывает другой набор данных и предоставляет дополнительную информацию о нём -->
+
+</head>
+
+<body>
+
+  <header class="p-2 border border-primary mt-2 mb-2">
+    <div class="text-center m-3"><mark>HEADER</mark></div>
+    <div class="d-flex justify-content-around align-items-center">
+      <div class="text-center border border-primary">
+        <mark>HGROUP</mark>
+        <hgroup>
+          <h1 class="text-center">The title for website h1 </h1>
+          <h2 class="text-center">The title for website h2 </h2>
+        </hgroup>
+      </div>
+      <div class="search-form">
+        <form class="form-inline my-2 my-lg-0">
+          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search through site content" role="search"
+            value="car 2" aria-required="true"  aria-relevant="all">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
+        <div class="mt-2">
+          <span>car 1</span>
+          <span><mark>car 2</mark></span>
+          <span>car 3</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <nav class="border border-primary text-center" role="navigation">
+    <mark>NAV</mark>
+    <ul class="d-flex justify-content-around p-3 m-0">
+      <li><a href="#">menu 1</a></li>
+      <li><a href="#">menu 2</a></li>
+      <li><a href="#">menu 3</a></li>
+      <li><a href="#">menu 4</a></li>
+      <li><a href="#">menu 5</a></li>
+    </ul>
+  </nav>
+
+  <div class="container-fluid">
+    <div class="row">
+
+      <div class="col-8 border border-danger mt-2">
+        <main class="p-3 ">
+
+          <div class="text-center m-3"><mark>MAIN red-border</mark></div>
+
+          <article class="border mt-2 p-2 border-info" role="article">
+            <div class="text-center m-3"><mark>ARTICLE blue-border</mark></div>
+            <header class="border border-warning p-2 m-1">
+              <mark>HEADER</mark>
+              <h3>post 1</h3>
+            </header>
+
+            <figure style="float: left;" class="m-2 border border-warning text-center p-2">
+              <mark>FIGURE</mark> <br>
+              <img src="https://via.placeholder.com/100" alt="img placeholder">
+              <figcaption>Image for the article</figcaption>
+            </figure>
+
+
+            <div class="border border-warning p-2 m-1 clearfix">
+              <p>
+                <mark>Paragraph</mark> <br>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eum eos repudiandae, tenetur voluptate est
+                iure
+                aut autem consectetur nihil, aperiam nesciunt itaque ipsa voluptates ipsam repellat rem aspernatur
+                maiores
+                dolorem enim tempore rerum, nemo vero dignissimos eligendi. Ducimus reprehenderit consequuntur quos
+                minima
+                quis deserunt doloremque atque, dolore rerum fuga consequatur?
+              </p>
+
+              <div class="text-right">
+                <mark>CITE</mark> <br>
+                <span>Статья взята из <cite>google.com</cite></span>
+              </div>
+
+
+              <div class="text-right mt-2">
+                <mark>TIME</mark> <br>
+                <time datetime="2020-03-10T19:00">Posted 2020-03-10 19:00</time>
+              </div>
+
+            </div>
+
+
+            <footer class="border border-warning p-2 m-1">
+              <mark>FOOTER</mark>
+              <ul>
+                <li>comment 1</li>
+                <li>comment 2</li>
+                <li>comment 3</li>
+              </ul>
+            </footer>
+
+          </article>
+
+          <section class="border border-info mt-2 p-2" aria-live="assertive">
+            <div class="text-center p-2">
+              <mark>SECTION</mark>
+            </div>
+            <h2>Съёмки фильма Полипропилен</h2>
+            <p>История о том, как снимали фильм, где герои отдыхали на пляже,
+              потом пришёл антагонист, избил протагонистов, сбросил их в бассейн,
+              и что из этого получилось.</p>
+          </section>
+
+        </main>
+      </div>
+
+      <div class="col-4  mt-2">
+        <aside class="border border-primary h-100" role="complementary" role="complementary">
+          <div class="text-center m-3"><mark>ASIDE</mark></div>
+          <ul>
+            <li><a href="#">post 1</a></li>
+            <li><a href="#">post 2</a></li>
+            <li><a href="#">post 3</a></li>
+            <li><a href="#">post 4</a></li>
+            <li><a href="#">post 5</a></li>
+          </ul>
+        </aside>
+      </div>
+    </div>
+  </div>
+
+  <footer class="text-center mt-3 border border-primary p-2">
+    <mark>FOOTER</mark>
+    <div class="d-flex justify-content-around">
+      <div class="border border-success p-2 m-2">
+        <mark>SMALL</mark> <br>
+        <small>Copyright 2020</small>
+      </div>
+      <div class="border border-success p-2 m-2">
+        <mark>ADRES</mark> <br>
+        <address>Homel. R-80</address>
+      </div>
+    </div>
+  </footer>
+
+
+  <!--
+
+    Вехи / Ориентиры : 
+    Арии roleзначение атрибутов может выступать в качестве ориентиров , которые либо копирует семантику элементов HTML5 (например <nav>), или выйти за пределы семантики HTML5 , чтобы обеспечить указатели на различные функциональные области, например search, tabgroup, tab, listboxи т.д.
+
+
+    Динамическое обновление контента : программы чтения с экрана, как правило, испытывают трудности с отчетом о постоянно меняющемся контенте; с ARIA мы можем использовать aria-liveдля информирования пользователей программы чтения с экрана, когда обновляется область содержимого, например, через XMLHttpRequest или API DOM .
+
+
+    Расширение доступности клавиатуры : есть встроенные элементы HTML, которые имеют встроенную доступность клавиатуры; когда другие элементы используются наряду с JavaScript для имитации аналогичных взаимодействий, в результате страдает доступность клавиатуры и создание отчетов о программах чтения с экрана. Там, где это неизбежно, WAI-ARIA предоставляет средства, позволяющие другим элементам получить фокус (использование tabindex).
+
+
+    Доступность несемантических элементов управления : если <div>для создания сложной пользовательской функции используется серия вложенных элементов вместе с CSS / JavaScript или если собственный элемент управления значительно улучшен / изменен с помощью JavaScript, доступность может пострадать - пользователям программы чтения с экрана будет трудно выяснить, что делает функция, если нет семантики или других подсказок. В таких ситуациях, ВСС может помочь обеспечить то , что отсутствует с комбинацией ролей нравится button, listboxили tabgroup, и свойство , как aria-requiredи aria-posinsetпредоставить дополнительные ключи к функциональности.
+
+
+  -->
+
+  <!--
+
+    role ==> позволяет вам добавлять дополнительную семантическую ценность к элементам
+    aria-label ==> Текст метки, содержащийся в aria-labelатрибуте, считывается при выделении ввода формы.
+    
+    aria-live ==> Применение этого к элементу заставляет программы чтения с экрана читать содержимое, которое обновляется.
+    aria-atomic="true" ==> Атрибут сообщает screerader из всех содержимого элемента , как один блок, которые были обновлены.
+
+    tabindex="0"- как указано выше, это значение позволяет элементам, которые обычно не являются вкладками, стать вкладками. Это самая полезная ценность tabindex.
+    tabindex="-1" - это позволяет обычно не вкладываемым элементам получать фокус программно, например, через JavaScript, или как цель ссылок. 
+
+
+    =========== Проверка формы и предупреждения об ошибках ==================
+
+    aria-relevant all инструктирует Экранное считывать содержимое списка ошибок , когда какое - либо изменение к нему - то есть , когда ошибки были добавлены или удалены. Это полезно, потому что пользователь захочет узнать, какие ошибки остались, а не только то, что было добавлено или удалено из списка.
+
+    role="alert"автоматически превращает элемент, к которому он применяется, в живой регион, поэтому изменения в нем считываются; он также семантически идентифицирует его как предупреждающее сообщение (важная информация, зависящая от времени и контекста) и представляет собой лучший, более доступный способ доставки оповещения пользователю (модальные диалоговые окна, такие как alert()вызовы, имеют ряд проблем с доступностью; см. всплывающие окна от WebAIM). ).
+
+    aria-requiredатрибут, который дает подсказки читателям экрана, которые должны сообщать пользователям, что необходимо заполнить входные данные формы. Обновите <input>элементы следующим образом:
+
+    aria-valueminи aria-valuemaxсвойства для указания минимальных и максимальных значений
+
+
+    aria-disabled="true" ==> свойств и состояний для указания статуса элементов формы
+
+  -->
+
+
+</body>
+
+</html>

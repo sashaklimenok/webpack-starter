@@ -1,0 +1,80 @@
+<style>
+    .text:nth-child(1)+.text {
+      /* выбор только элемента расположенного непосредственно за определенным  */
+      color: red;
+    }
+
+    .text~.text1 {
+      /* находит второй элемент только если ему предшествует первый */
+      color: green;
+    }
+
+    .text>span {
+      color: purple;
+    }
+
+    input:indeterminate+label {
+      background: lime;
+    }
+
+
+    progress {
+      margin: 4px;
+    }
+
+    progress:indeterminate {
+      opacity: 0.5;
+      box-shadow: 0 0 2px 1px red;
+    }
+
+    input:read-only {
+      background: rebeccapurple;
+    }
+
+    input:read-write {
+      border: 1px solid green;
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <div id="root">
+    <p class="text">hello p #1</p>
+    <p class="text">hello p #2</p>
+    <p class="text">hello p #3</p>
+    <p class="text1">hello p #4</p>
+    <div class="text">
+      <span>1 span
+        <span>2 span</span>
+      </span>
+    </div>
+    <p class="text1">hello p #4</p>
+    <p class="text">hello p #4</p>
+    <p class="text">hello p #5</p>
+  </div>
+
+  <div>
+    <input type="checkbox" id="checkbox">
+    <input type="text" readonly id="checkbox">
+  </div>
+  <div>
+    <input type="radio" id="radio">
+    <label for="radio">Эта метка будет зелёной.</label>
+  </div>
+
+  <form>
+    <p><input type="text" size="40" value="Введенный текст не может изменяться" readonly></p>
+    <p><input type="text" size="40" value="Этот текст может изменяться"></p>
+    <p><input type="submit" value="Отправить"></p>
+  </form>
+
+
+
+  <h1 contenteditable="true">Тортуга</h1>
+  <p contenteditable="true">А вслед за этим на Тортуге наступили
+    дни кипучей деятельности: суда оснащались в дальний поход,
+    заготавливалось мясо и другие продукты, грузились различные
+    запасы, необходимые для военных действий.</p>
+  <progress></progress>
