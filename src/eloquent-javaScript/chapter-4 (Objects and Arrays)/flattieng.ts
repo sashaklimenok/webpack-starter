@@ -1,6 +1,6 @@
-import { UNICODES } from "../mock";
+import { UNICODE } from "../mock";
 
-const unicodeRanges = UNICODES.filter((el: any, i) => el.living && i < 2).map((unicode) => unicode.ranges);
+const unicodeRanges = UNICODE.filter((el: any, i) => el.living && i < 2).map((unicode) => unicode.ranges);
 
 function flattening(arr: any[]): any {
   const result: any = [];
