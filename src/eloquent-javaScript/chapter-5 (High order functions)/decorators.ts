@@ -28,5 +28,4 @@ const obj: Obj = {
 }
 
 obj.slow = cacheDecorator(obj.slow);
-console.log(obj.slow(3));
-console.log(obj.slow(3));
+

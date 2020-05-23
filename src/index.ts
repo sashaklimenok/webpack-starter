@@ -1,4 +1,10 @@
-import { printNumbers } from "./eloquent-javaScript/chapter-5 (High order functions)/timers";
-import './eloquent-javaScript/chapter-5 (High order functions)/decorators';
+import { debounce } from "./eloquent-javaScript/chapter-5 (High order functions)/debounce";
 
-printNumbers(0, 5);
+let test = (arg: any) => {
+  console.log(arg)
+};
+
+test = debounce(test, 1000);
+
+test(100);
+setTimeout(() => test(200), 1000);
