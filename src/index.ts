@@ -1,12 +1,3 @@
-import './shared/styles/main.scss';
-import { createElement } from './shared';
+import { Vector } from "./eloquent-javaScript/chapter-6 (Secret life object)/Vector";
 
-const root: HTMLDivElement | null = document.querySelector('#root');
-const heading: HTMLHeadingElement = document.createElement('h1');
-heading.textContent = 'Hello Webpack';
-if (root) {
-  root.append(heading);
-}
-
-const test = createElement('div', {marginTop: '10px'});
-console.log(test);
+console.log(new Vector(3, 4).length);
