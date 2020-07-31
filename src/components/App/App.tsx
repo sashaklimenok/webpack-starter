@@ -1,7 +1,11 @@
 import React, { ReactElement } from 'react';
+import ava from 'assets/img/avatar.png';
 
 export const App = (): ReactElement => {
   return (
-    <h1>Hello World</h1>
+    <>
+      <img src={ ava } alt="ava"/>
+      <h1>Hello World</h1>
+    </>
   );
 };
