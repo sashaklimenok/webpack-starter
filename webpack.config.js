@@ -1,86 +1,104 @@
-const path = require("path");
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const path = require('path');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+
+const PATH = {
+  SRC: path.join(__dirname, '/src'),
+  DIST: path.join(__dirname, '/dist'),
+  FONTS: path.join(__dirname, '/dist/fonts'),
+  ASSETS: path.join(__dirname, '/assets'),
+};
 
 module.exports = {
   entry: {
-    app: "./src/index.ts",
+    app: path.join(PATH.SRC, 'index.tsx'),
   },
   output: {
-    filename: "[name].js",
-    path: path.resolve(__dirname, "dist"),
+    filename: '[name].js',
+    path: path.resolve(PATH.DIST),
   },
   resolve: {
-    extensions: [".ts", ".tsx", ".js", ".jsx"],
+    extensions: ['.ts', '.tsx', '.js', '.jsx'],
+    alias: {
+      assets: path.resolve(PATH.ASSETS),
+      src: path.resolve(PATH.SRC),
+    },
   },
   module: {
     rules: [
       {
         test: /\.tsx?$/,
-        use: "ts-loader",
+        use: 'ts-loader',
         exclude: /node_modules/,
       },
       {
         test: /\.scss$/,
         use: [
-          "style-loader",
+          'style-loader',
           MiniCssExtractPlugin.loader,
           {
-            loader: "css-loader",
-            options: { sourceMap: true }
+            loader: 'css-loader',
+            options: { sourceMap: true },
           },
           {
-            loader: "postcss-loader",
+            loader: 'postcss-loader',
             options: {
               sourceMap: true,
-              config: { path: `./postcss.config.js` }
-            }
+              config: { path: `./postcss.config.js` },
+            },
           },
           {
-            loader: "sass-loader",
-            options: { sourceMap: true }
-          }
-        ]
+            loader: 'sass-loader',
+            options: { sourceMap: true },
+          },
+        ],
       },
       {
         test: /\.css$/,
         use: [
-          "style-loader",
+          'style-loader',
           MiniCssExtractPlugin.loader,
           {
-            loader: "css-loader",
-            options: { sourceMap: true }
+            loader: 'css-loader',
+            options: { sourceMap: true },
           },
           {
-            loader: "postcss-loader",
+            loader: 'postcss-loader',
             options: {
               sourceMap: true,
-              config: { path: `./postcss.config.js` }
-            }
-          }
-        ]
+              config: { path: `./postcss.config.js` },
+            },
+          },
+        ],
+      },
+      {
+        test: /\.(gif|png|jpe?g|svg)$/i,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[path][name].[ext]',
+            },
+          },
+          {
+            loader: 'image-webpack-loader',
+            options: {
+              bypassOnDebug: true, // webpack@1.x
+              disable: true, // webpack@2.x and newer
+            },
+          },
+        ],
       },
     ],
   },
   plugins: [
     new MiniCssExtractPlugin({
-      filename: "[name].css",
+      filename: '[name].css',
     }),
     new HtmlWebpackPlugin({
       filename: 'index.html',
       template: './public/index.html',
-      minify: false
-    })
+      minify: false,
+    }),
   ],
-  devServer: {
-    contentBase: path.join(__dirname, 'dist'),
-    compress: true,
-    port: 8080,
-    overlay: true
-  },
-  devtool: "inline-source-map",
-  watchOptions: {
-    aggregateTimeout: 100,
-    ignored: ["node_modules/**"],
-  },
 };

@@ -1,4 +1,8 @@
 /dist
 **/tests-mocks/**
 jest.config.js
+webpack.config.js
+webpack.dev.js
+webpack.prod.js
 commitlint.config.js
+.eslintrc.js

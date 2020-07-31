@@ -1,0 +1,14 @@
+@use "./constants/colors";
+@use "./constants/typography";
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: typography.$fallback-font-family;
+  color: colors.$black;
+  background-color: colors.$alabaster;
+}
+
+*, ::before, ::after {
+  box-sizing: border-box;
+}

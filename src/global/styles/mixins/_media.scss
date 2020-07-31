@@ -1,0 +1,14 @@
+@use 'src/global/styling/constants/breakpoints';
+
+@mixin media($size) {
+  @media screen and (min-width: $size) {
+    @content;
+  }
+}
+
+@mixin desktop-only {
+  @include media(map-get(breakpoints.$breakpoints, 'large')) {
+    @content;
+  }
+}
+
