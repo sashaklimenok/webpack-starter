@@ -1,10 +1,7 @@
-import { APP_NAME } from './global/constants';
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { App } from './components/App/App';
 import './global/styles/style.scss';
-import img1 from 'assets/img/avatar.png';
-console.log(APP_NAME);
 
-const image = new Image();
-image.src = img1;
-document.body.append(image);
-
+ReactDOM.render(<App />, document.getElementById('root'));
 
