@@ -14,8 +14,20 @@ module.exports = {
     app: path.join(PATH.SRC, 'index.tsx'),
   },
   output: {
-    filename: '[name].js',
+    filename: '[name].[hash].js',
     path: path.resolve(PATH.DIST),
+  },
+  optimization: {
+    splitChunks: {
+      cacheGroups: {
+        vendor: {
+          name: 'vendors',
+          test: /node_modules/,
+          chunks: 'all',
+          enforce: true
+        }
+      }
+    }
   },
   resolve: {
     extensions: ['.ts', '.tsx', '.js', '.jsx'],
@@ -93,7 +105,7 @@ module.exports = {
   },
   plugins: [
     new MiniCssExtractPlugin({
-      filename: '[name].css',
+      filename: '[name].[hash].css',
     }),
     new HtmlWebpackPlugin({
       filename: 'index.html',
